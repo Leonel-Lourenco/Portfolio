@@ -1,0 +1,57 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import projectsData from '../data/projects.json';
+
+const { projects } = projectsData;
+---
+
+<Layout title="Leonel Lourenco | Full-Stack Engineer">
+  <Hero 
+    name="Leonel Lourenco" 
+    tagline="Full-Stack Engineer • Building production-ready systems at NJIT"
+  />
+  
+  <section id="projects" class="section">
+    <div class="container">
+      <div class="mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Featured Projects</h2>
+        <p class="text-muted max-w-2xl">
+          A selection of my most impactful work — from AI-powered platforms to autonomous systems.
+          Each project includes an interactive demo.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {projects.map((project) => (
+          <ProjectCard 
+            title={project.title}
+            description={project.description}
+            thumbnail={project.thumbnail}
+            href={`/projects/${project.slug}`}
+            tags={project.tags}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <section class="section bg-primary text-secondary">
+    <div class="container text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Available for Opportunities</h2>
+      <p class="text-secondary/70 max-w-xl mx-auto mb-8">
+        I'm currently looking for full-time roles and interesting projects.
+        Let's build something great together.
+      </p>
+      <div class="flex items-center justify-center gap-4">
+        <a href="mailto:leoneldlourenco@outlook.com" class="btn bg-secondary text-primary hover:bg-accent hover:text-secondary">
+          Get in Touch
+        </a>
+        <a href="/about" class="btn border border-secondary/30 text-secondary hover:bg-secondary/10">
+          Learn More
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

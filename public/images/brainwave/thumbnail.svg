@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0066FF;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#000000;stop-opacity:0.9" />
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="450" fill="url(#grad)"/>
+  <rect width="800" height="450" fill="url(#grid)"/>
+  <text x="400" y="200" font-family="Inter, system-ui, sans-serif" font-size="48" font-weight="700" fill="white" text-anchor="middle">BrainWave</text>
+  <text x="400" y="260" font-family="Inter, system-ui, sans-serif" font-size="20" fill="rgba(255,255,255,0.7)" text-anchor="middle">Demo Screenshot Coming Soon</text>
+  <rect x="300" y="300" width="200" height="50" rx="8" fill="rgba(255,255,255,0.15)"/>
+  <text x="400" y="332" font-family="Inter, system-ui, sans-serif" font-size="16" fill="white" text-anchor="middle">View Demo →</text>
+</svg>

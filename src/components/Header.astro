@@ -1,0 +1,79 @@
+---
+const navItems = [
+  { label: "Projects", href: "/#projects" },
+  { label: "About", href: "/about" }
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-secondary/80 backdrop-blur-md border-b border-border">
+  <nav class="container flex items-center justify-between h-16">
+    <a href="/" class="text-xl font-bold tracking-tight hover:text-primary transition-colors">
+      LL
+    </a>
+    
+    <div class="flex items-center gap-8">
+      <ul class="hidden md:flex items-center gap-8">
+        {navItems.map((item) => (
+          <li>
+            <a 
+              href={item.href}
+              class:list={[
+                "text-sm font-medium transition-colors hover:text-accent",
+                currentPath === item.href ? "text-accent" : "text-muted"
+              ]}
+            >
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+      
+      <a 
+        href="mailto:leoneldlourenco@outlook.com"
+        class="btn btn-primary text-sm"
+      >
+        Contact
+      </a>
+    </div>
+
+    <button 
+      id="mobile-menu-btn"
+      class="md:hidden p-2 -mr-2"
+      aria-label="Toggle menu"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </nav>
+
+  <div id="mobile-menu" class="hidden md:hidden border-t border-border bg-secondary">
+    <ul class="container py-4 space-y-4">
+      {navItems.map((item) => (
+        <li>
+          <a 
+            href={item.href}
+            class="block text-sm font-medium text-muted hover:text-accent transition-colors"
+          >
+            {item.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</header>
+
+<div class="h-16"></div>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  
+  btn?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+  });
+</script>

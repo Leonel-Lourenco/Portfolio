@@ -1,0 +1,192 @@
+{
+  "welcomeMessage": "Hi! I'm BrainWave 📚 I help students learn math, science, and reading. Ask me anything, or click 'Take a Quiz' to test your knowledge!",
+  "fallbackResponse": "That's a great question! In the full BrainWave app, I'd walk you through this step by step with personalized explanations. Try asking me about multiplication, fractions, or the solar system!",
+  "guardrails": {
+    "blockedPatterns": ["password", "address", "phone number", "email", "age", "birthday", "where do you live", "personal"],
+    "blockedResponse": "I'm here to help with learning! Let's stick to math, science, and reading questions. 📚"
+  },
+  "testQuestions": [
+    {
+      "id": "q1",
+      "category": "math",
+      "question": "What is 7 × 8?",
+      "options": ["54", "56", "48", "64"],
+      "correctIndex": 1,
+      "explanation": "7 × 8 = 56. Remember: 5, 6, 7, 8 — the numbers go in order!"
+    },
+    {
+      "id": "q2",
+      "category": "math",
+      "question": "What is 9 × 9?",
+      "options": ["72", "81", "90", "63"],
+      "correctIndex": 1,
+      "explanation": "9 × 9 = 81. Fun tip: For any 9× fact, the digits always add up to 9! (8 + 1 = 9)"
+    },
+    {
+      "id": "q3",
+      "category": "science",
+      "question": "How many planets are in our solar system?",
+      "options": ["7", "8", "9", "10"],
+      "correctIndex": 1,
+      "explanation": "There are 8 planets! Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, and Neptune."
+    },
+    {
+      "id": "q4",
+      "category": "science",
+      "question": "What do plants need to make food through photosynthesis?",
+      "options": ["Sunlight and water", "Only water", "Only sunlight", "Darkness"],
+      "correctIndex": 0,
+      "explanation": "Plants need sunlight, water, and carbon dioxide to make food through photosynthesis!"
+    },
+    {
+      "id": "q5",
+      "category": "reading",
+      "question": "What type of word is 'run'?",
+      "options": ["Noun", "Verb", "Adjective", "Adverb"],
+      "correctIndex": 1,
+      "explanation": "Run is a verb — it's an action word that tells what someone does!"
+    },
+    {
+      "id": "q6",
+      "category": "reading",
+      "question": "Which word is a noun?",
+      "options": ["Happy", "Quickly", "Teacher", "Jump"],
+      "correctIndex": 2,
+      "explanation": "Teacher is a noun — it names a person! Nouns can be people, places, things, or ideas."
+    },
+    {
+      "id": "q7",
+      "category": "math",
+      "question": "In the fraction 3/4, what is the denominator?",
+      "options": ["3", "4", "7", "12"],
+      "correctIndex": 1,
+      "explanation": "The denominator is the bottom number (4). It tells how many equal parts the whole is divided into."
+    },
+    {
+      "id": "q8",
+      "category": "science",
+      "question": "What keeps us on the ground?",
+      "options": ["Air", "Gravity", "Wind", "Magnetism"],
+      "correctIndex": 1,
+      "explanation": "Gravity is the force that pulls objects toward each other. Earth's gravity keeps us on the ground!"
+    },
+    {
+      "id": "q9",
+      "category": "math",
+      "question": "What is 12 × 12?",
+      "options": ["124", "144", "132", "156"],
+      "correctIndex": 1,
+      "explanation": "12 × 12 = 144. This is called 'twelve squared' — a great one to memorize!"
+    },
+    {
+      "id": "q10",
+      "category": "science",
+      "question": "What happens to water when it evaporates?",
+      "options": ["It freezes", "It turns to vapor", "It disappears forever", "It becomes solid"],
+      "correctIndex": 1,
+      "explanation": "When water evaporates, it turns into water vapor (a gas) and rises into the air!"
+    }
+  ],
+  "responses": [
+    {
+      "patterns": ["what is 7 times 8", "7 x 8", "7*8", "7 × 8", "7x8", "multiply 7 and 8"],
+      "response": "Great question! **7 × 8 = 56** 🎯\n\nHere's a trick: 5, 6, 7, 8 — the numbers go in order! You can also think of it as 7 groups of 8 items.",
+      "category": "math"
+    },
+    {
+      "patterns": ["what is 6 times 7", "6 x 7", "6*7", "6 × 7", "6x7"],
+      "response": "**6 × 7 = 42** ✨\n\nFun fact: This is one of the most commonly missed multiplication facts! A memory trick: 6 and 7 are neighbors, and 42 is their product.",
+      "category": "math"
+    },
+    {
+      "patterns": ["what is 9 times 9", "9 x 9", "9*9", "9 × 9", "9x9"],
+      "response": "**9 × 9 = 81** 🌟\n\nHere's a cool pattern: For any 9× fact, the digits of the answer always add up to 9! (8 + 1 = 9)",
+      "category": "math"
+    },
+    {
+      "patterns": ["what is 12 times 12", "12 x 12", "12*12", "12 × 12", "12x12"],
+      "response": "**12 × 12 = 144** 🎉\n\nThis is called \"twelve squared\" or \"a gross\" in old counting terms. It's a good one to memorize!",
+      "category": "math"
+    },
+    {
+      "patterns": ["what is a fraction", "explain fractions", "how do fractions work"],
+      "response": "A **fraction** represents a part of a whole! 🍕\n\nIt has two parts:\n- **Numerator** (top): How many parts you have\n- **Denominator** (bottom): How many equal parts the whole is divided into\n\nFor example, 3/4 means you have 3 out of 4 equal pieces!",
+      "category": "math"
+    },
+    {
+      "patterns": ["add fractions", "how to add fractions", "adding fractions"],
+      "response": "To add fractions:\n\n1. **Same denominators?** Just add the numerators!\n   - 1/4 + 2/4 = 3/4 ✓\n\n2. **Different denominators?** Find a common denominator first!\n   - 1/2 + 1/4 → 2/4 + 1/4 = 3/4 ✓\n\nWant me to practice one with you?",
+      "category": "math"
+    },
+    {
+      "patterns": ["what is the solar system", "tell me about solar system", "planets"],
+      "response": "Our **Solar System** is amazing! ☀️🪐\n\nIt includes:\n- **The Sun** (our star)\n- **8 planets**: Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune\n- Plus moons, asteroids, and comets!\n\nA memory trick: **My Very Excited Mother Just Served Us Nachos** (first letters match planet order!)",
+      "category": "science"
+    },
+    {
+      "patterns": ["how many planets", "number of planets"],
+      "response": "There are **8 planets** in our solar system! 🌍\n\n1. Mercury\n2. Venus\n3. Earth (that's us!)\n4. Mars\n5. Jupiter\n6. Saturn\n7. Uranus\n8. Neptune\n\nPluto was reclassified as a \"dwarf planet\" in 2006.",
+      "category": "science"
+    },
+    {
+      "patterns": ["what is photosynthesis", "how do plants make food", "photosynthesis"],
+      "response": "**Photosynthesis** is how plants make their own food! 🌱☀️\n\nThe recipe:\n- **Sunlight** + **Water** + **Carbon Dioxide** → **Glucose** (sugar) + **Oxygen**\n\nPlants are like little factories that turn sunlight into energy and give us oxygen to breathe!",
+      "category": "science"
+    },
+    {
+      "patterns": ["water cycle", "what is the water cycle", "how does rain work"],
+      "response": "The **Water Cycle** keeps Earth's water moving! 💧\n\n1. **Evaporation**: Sun heats water → turns to vapor\n2. **Condensation**: Vapor cools → forms clouds\n3. **Precipitation**: Clouds release rain/snow\n4. **Collection**: Water gathers in lakes, rivers, oceans\n\nThen it starts all over again! ♻️",
+      "category": "science"
+    },
+    {
+      "patterns": ["what is a noun", "explain nouns", "noun"],
+      "response": "A **noun** is a word that names something! 📝\n\n- **Person**: teacher, mom, doctor\n- **Place**: school, park, home\n- **Thing**: book, computer, apple\n- **Idea**: happiness, freedom, love\n\nEasy test: Can you put \"the\" or \"a\" before it? Then it's probably a noun!",
+      "category": "reading"
+    },
+    {
+      "patterns": ["what is a verb", "explain verbs", "verb"],
+      "response": "A **verb** is an action word — it tells what someone or something does! 🏃\n\nExamples:\n- run, jump, swim (physical actions)\n- think, believe, know (mental actions)\n- is, are, was (being verbs)\n\nEvery sentence needs at least one verb!",
+      "category": "reading"
+    },
+    {
+      "patterns": ["what is an adjective", "explain adjectives", "adjective"],
+      "response": "An **adjective** describes a noun — it tells us more about it! 🎨\n\nExamples:\n- The **big** dog\n- A **red** apple\n- The **happy** student\n\nAdjectives answer: What kind? How many? Which one?",
+      "category": "reading"
+    },
+    {
+      "patterns": ["main idea", "what is main idea", "find main idea"],
+      "response": "The **main idea** is what a text is mostly about! 📖\n\nTo find it:\n1. Read the title and first paragraph\n2. Look for repeated words or ideas\n3. Ask: \"What is the author's main point?\"\n\nSupporting details explain or prove the main idea!",
+      "category": "reading"
+    },
+    {
+      "patterns": ["hello", "hi", "hey", "good morning", "good afternoon"],
+      "response": "Hello! 👋 Welcome to BrainWave!\n\nI'm here to help you learn. You can ask me about:\n- 🔢 **Math** (multiplication, fractions, etc.)\n- 🔬 **Science** (solar system, photosynthesis, etc.)\n- 📚 **Reading** (nouns, verbs, main idea, etc.)\n\nWhat would you like to learn today?",
+      "category": "general"
+    },
+    {
+      "patterns": ["help", "what can you do", "how does this work"],
+      "response": "I'm **BrainWave**, your AI tutor! 🧠✨\n\nI can help with:\n- **Math**: Multiplication, fractions, word problems\n- **Science**: Solar system, water cycle, photosynthesis\n- **Reading**: Grammar, vocabulary, comprehension\n\nJust type your question and I'll explain it step by step!",
+      "category": "general"
+    },
+    {
+      "patterns": ["thank you", "thanks", "thx"],
+      "response": "You're welcome! 😊 Keep up the great work!\n\nRemember: Every question you ask helps you learn something new. Don't be afraid to ask more!",
+      "category": "general"
+    },
+    {
+      "patterns": ["what is 2+2", "2+2", "2 + 2"],
+      "response": "**2 + 2 = 4** ✓\n\nThis is one of the first math facts everyone learns! You can think of it as combining two groups of 2.",
+      "category": "math"
+    },
+    {
+      "patterns": ["what is 10 times 10", "10 x 10", "10*10", "10x10"],
+      "response": "**10 × 10 = 100** 💯\n\nMultiplying by 10 is easy — just add a zero to the end! This makes 10 a very useful number in math.",
+      "category": "math"
+    },
+    {
+      "patterns": ["what is gravity", "how does gravity work", "gravity"],
+      "response": "**Gravity** is the force that pulls objects toward each other! 🌍\n\n- It keeps us on the ground\n- It keeps the Moon orbiting Earth\n- It keeps Earth orbiting the Sun\n\nThe bigger an object, the stronger its gravity. That's why you'd weigh less on the Moon!",
+      "category": "science"
+    }
+  ]
+}

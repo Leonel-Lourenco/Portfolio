@@ -1,0 +1,51 @@
+---
+const currentYear = new Date().getFullYear();
+
+const socialLinks = [
+  { 
+    label: "Email", 
+    href: "mailto:leoneldlourenco@outlook.com",
+    icon: `<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline>`
+  },
+  { 
+    label: "LinkedIn", 
+    href: "https://www.linkedin.com/in/leonel-lourenco/",
+    icon: `<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle>`
+  }
+];
+---
+
+<footer class="border-t border-border py-8 mt-auto">
+  <div class="container">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-sm text-muted">
+        © {currentYear} Leonel Lourenco. All rights reserved.
+      </p>
+      
+      <div class="flex items-center gap-6">
+        {socialLinks.map((link) => (
+          <a 
+            href={link.href}
+            target={link.href.startsWith('http') ? '_blank' : undefined}
+            rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+            class="text-muted hover:text-accent transition-colors"
+            aria-label={link.label}
+          >
+            <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              width="20" 
+              height="20" 
+              viewBox="0 0 24 24" 
+              fill="none" 
+              stroke="currentColor" 
+              stroke-width="2" 
+              stroke-linecap="round" 
+              stroke-linejoin="round"
+              set:html={link.icon}
+            />
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,77 @@
+{
+  "projects": [
+    {
+      "id": "brainwave",
+      "title": "BrainWave",
+      "slug": "brainwave",
+      "description": "AI-powered tutoring platform for elementary students with real-time chat, progress tracking, and COPPA compliance.",
+      "longDescription": "BrainWave is a COPPA-compliant AI tutoring platform designed for elementary school students (grades 4-6). It features real-time conversational tutoring via OpenAI GPT-4o-mini, practice tests with progress tracking, parent monitoring dashboards, and comprehensive data privacy controls.",
+      "thumbnail": "/images/brainwave/thumbnail.png",
+      "demoType": "video",
+      "tags": ["React", "Flask", "SQLite", "OpenAI"],
+      "features": [
+        "Real-time AI tutoring with age-appropriate language",
+        "Progress tracking across subjects",
+        "Parent dashboard with student linking",
+        "COPPA/FERPA compliant data handling",
+        "Practice tests with categorized questions"
+      ]
+    },
+    {
+      "id": "spec2cad",
+      "title": "Spec2CAD2",
+      "slug": "spec2cad",
+      "description": "AI-driven CAD automation system that converts JSON specifications into FreeCAD 3D models with vision capabilities.",
+      "longDescription": "Spec2CAD2 is a hybrid AI-deterministic system that transforms JSON specifications and technical drawings into fully realized FreeCAD 3D models. It employs semantic validation, face-aware coordinate systems, and supports features like holes, pockets, slots, chamfers, and fillets.",
+      "thumbnail": "/images/spec2cad/thumbnail.png",
+      "demoType": "video",
+      "tags": ["Python", "FreeCAD", "MCP", "Pydantic"],
+      "features": [
+        "JSON-to-CAD model generation",
+        "Technical drawing processing with AI vision",
+        "Deterministic + AI-driven hybrid pipeline",
+        "Face-local coordinate system for precision",
+        "Export to FCStd, STEP, STL formats"
+      ]
+    },
+    {
+      "id": "otto",
+      "title": "Otto_2",
+      "slug": "otto",
+      "description": "Autonomous Shopify site builder that transforms business data into fully functional, AI-tested storefronts.",
+      "longDescription": "Otto_2 is a single-operator autonomous system that converts customer business data into complete Shopify storefronts. It uses Claude for code generation, Gemini for UX evaluation, and features self-healing test loops with automated fixes until quality thresholds are met.",
+      "thumbnail": "/images/otto/thumbnail.png",
+      "demoType": "video",
+      "tags": ["Python", "Claude AI", "Gemini", "Shopify"],
+      "features": [
+        "Fully autonomous theme generation",
+        "AI-powered UX evaluation with Gemini",
+        "Self-healing test loops with Claude fixes",
+        "Docker-isolated testing environment",
+        "Discord notifications for review"
+      ]
+    },
+    {
+      "id": "phantom",
+      "title": "Phantom",
+      "slug": "phantom",
+      "description": "Privacy-first voice assistant with speaker verification, Canvas LMS integration, intelligent scheduling, and a gamified productivity system.",
+      "longDescription": "Phantom is a fully local voice assistant running on consumer hardware (8GB VRAM). It combines wake word detection, speaker verification with ECAPA-TDNN embeddings, Whisper STT, and Piper TTS—all processing audio locally with zero cloud AI dependency. Beyond calendar management, Phantom integrates with Canvas LMS for academic tracking, features an intelligent task scheduler with duration estimation, and includes a gamified token system that lets you earn screen time by completing tasks.",
+      "thumbnail": "/images/phantom/thumbnail.png",
+      "demoType": "video",
+      "tags": ["Python", "Whisper", "Vosk", "Piper TTS", "Canvas LMS", "Twilio"],
+      "features": [
+        "Speaker verification with ECAPA-TDNN embeddings and passcode fallback",
+        "Phonetic correction for misheard voice commands",
+        "Canvas LMS integration: announcements, assignments, grades, exam reminders",
+        "Intelligent task scheduling with duration estimation and 'plan my day'",
+        "Gamified token system: earn tokens for tasks, spend on screen time",
+        "Browser/Steam blocker with URL detection and overlay enforcement",
+        "AI-powered task categorization with user-correction learning",
+        "Twilio phone reminders with pre-generated Piper TTS audio",
+        "Google Calendar CRUD with natural language date/time parsing",
+        "Security alerts via phone call/SMS for unauthorized access attempts"
+      ]
+    }
+  ]
+}

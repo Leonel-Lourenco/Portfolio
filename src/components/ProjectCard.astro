@@ -1,0 +1,71 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  thumbnail: string;
+  href: string;
+  tags?: string[];
+}
+
+const { title, description, thumbnail, href, tags = [] } = Astro.props;
+---
+
+<a href={href} class="project-card card group block">
+  <div class="aspect-video overflow-hidden bg-border">
+    <img 
+      src={thumbnail} 
+      alt={`${title} preview`}
+      class="w-full h-full object-cover transition-transform duration-slow group-hover:scale-105"
+      loading="lazy"
+    />
+  </div>
+  
+  <div class="p-6">
+    <h3 class="text-xl font-bold mb-2 group-hover:text-accent transition-colors">
+      {title}
+    </h3>
+    
+    <p class="text-muted text-sm mb-4 line-clamp-2">
+      {description}
+    </p>
+    
+    {tags.length > 0 && (
+      <div class="flex flex-wrap gap-2 mb-4">
+        {tags.slice(0, 4).map((tag) => (
+          <span class="badge badge-default">{tag}</span>
+        ))}
+      </div>
+    )}
+    
+    <span class="inline-flex items-center gap-2 text-sm font-medium text-primary group-hover:text-accent transition-colors">
+      Explore
+      <svg 
+        xmlns="http://www.w3.org/2000/svg" 
+        width="16" 
+        height="16" 
+        viewBox="0 0 24 24" 
+        fill="none" 
+        stroke="currentColor" 
+        stroke-width="2" 
+        stroke-linecap="round" 
+        stroke-linejoin="round"
+        class="transition-transform group-hover:translate-x-1"
+      >
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+        <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+    </span>
+  </div>
+</a>
+
+<style>
+  .project-card {
+    transform-style: preserve-3d;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .project-card:hover {
+    transform: translateY(-8px) rotateX(2deg);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  }
+</style>

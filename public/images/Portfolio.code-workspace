@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../.."
+		},
+		{
+			"path": "../../../2025_Capstone/2025_capstone/.windsurf"
+		}
+	],
+	"settings": {
+		"powershell.cwd": "Portfolio"
+	}
+}

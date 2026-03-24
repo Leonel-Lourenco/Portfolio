@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url('https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hjp-Ek-_EeA.woff2') format('woff2');
+  }
+
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 400 700;
+    font-display: swap;
+    src: url('https://fonts.gstatic.com/s/jetbrainsmono/v18/tDbY2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKxjPVmUsaaDhw.woff2') format('woff2');
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-secondary text-primary font-sans antialiased;
+    line-height: 1.6;
+  }
+
+  ::selection {
+    @apply bg-accent text-white;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+    line-height: 1.2;
+  }
+
+  a {
+    @apply transition-colors duration-fast;
+  }
+
+  a:hover {
+    @apply text-accent;
+  }
+
+  code {
+    @apply font-mono text-sm;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-site mx-auto px-6;
+  }
+
+  .section {
+    @apply py-16 md:py-24;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 font-medium rounded-md transition-all duration-base;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-secondary hover:bg-accent;
+  }
+
+  .btn-secondary {
+    @apply bg-transparent text-primary border border-primary hover:bg-primary hover:text-secondary;
+  }
+
+  .btn-ghost {
+    @apply bg-transparent text-primary hover:text-accent;
+  }
+
+  .card {
+    @apply bg-secondary border border-border rounded-lg overflow-hidden transition-all duration-base;
+  }
+
+  .card:hover {
+    @apply shadow-lg border-muted;
+    transform: translateY(-4px);
+  }
+
+  .grid-pattern {
+    background-image: 
+      linear-gradient(to right, #E5E5E5 1px, transparent 1px),
+      linear-gradient(to bottom, #E5E5E5 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
+  }
+
+  .link {
+    @apply text-primary underline decoration-border underline-offset-4 hover:decoration-accent transition-colors;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-3 py-1 text-xs font-medium rounded-full;
+  }
+
+  .badge-default {
+    @apply bg-border text-primary;
+  }
+
+  .badge-accent {
+    @apply bg-accent/10 text-accent;
+  }
+}
+
+@layer utilities {
+  .animate-stagger > * {
+    animation: fadeUp 0.5s ease-out backwards;
+  }
+
+  .animate-stagger > *:nth-child(1) { animation-delay: 0ms; }
+  .animate-stagger > *:nth-child(2) { animation-delay: 100ms; }
+  .animate-stagger > *:nth-child(3) { animation-delay: 200ms; }
+  .animate-stagger > *:nth-child(4) { animation-delay: 300ms; }
+  .animate-stagger > *:nth-child(5) { animation-delay: 400ms; }
+  .animate-stagger > *:nth-child(6) { animation-delay: 500ms; }
+
+  .perspective {
+    perspective: 1000px;
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+}
