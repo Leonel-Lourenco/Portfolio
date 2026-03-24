@@ -5,7 +5,9 @@ interface Props {
 }
 
 const { name, tagline } = Astro.props;
-const letters = name.split('');
+const [firstName, lastName] = name.split(' ');
+const firstLetters = firstName.split('');
+const lastLetters = lastName.split('');
 ---
 
 <section class="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
@@ -18,14 +20,26 @@ const letters = name.split('');
         class="hero-name inline-block text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight"
         aria-hidden="true"
       >
-        {letters.map((letter, index) => (
-          <span 
-            class="hero-letter inline-block opacity-0"
-            style={`animation-delay: ${300 + index * 50}ms`}
-          >
-            {letter === ' ' ? '\u00A0' : letter}
-          </span>
-        ))}
+        <span class="hero-first-name">
+          {firstLetters.map((letter, index) => (
+            <span 
+              class="hero-letter inline-block opacity-0 md:inline-block"
+              style={`animation-delay: ${300 + index * 50}ms`}
+            >
+              {letter}
+            </span>
+          ))}
+        </span>
+        <span class="hero-last-name block md:inline-block">
+          {lastLetters.map((letter, index) => (
+            <span 
+              class="hero-letter inline-block opacity-0 md:inline-block"
+              style={`animation-delay: ${300 + (firstLetters.length + index) * 50}ms`}
+            >
+              {letter}
+            </span>
+          ))}
+        </span>
       </span>
     </h1>
     
@@ -86,6 +100,29 @@ const letters = name.split('');
     100% {
       opacity: 1;
       transform: translateY(0);
+    }
+  }
+  
+  /* Mobile-specific styling for name stacking */
+  @media (max-width: 768px) {
+    .hero-last-name {
+      display: block !important;
+    }
+    
+    .hero-first-name {
+      display: block !important;
+      text-align: center;
+    }
+    
+    .hero-last-name {
+      display: block !important;
+      text-align: center;
+    }
+    
+    /* Force letters to not wrap within their name containers */
+    .hero-first-name .hero-letter,
+    .hero-last-name .hero-letter {
+      white-space: nowrap !important;
     }
   }
 </style>
