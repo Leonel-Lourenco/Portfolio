@@ -73,7 +73,7 @@ test.describe('About Page', () => {
   });
 
   test('"Back to Home" link is present', async ({ page }) => {
-    const backLink = page.locator('a[href="/"]').first();
+    const backLink = page.locator('section a[href="/"]').filter({ hasText: 'Back to Home' });
     await expect(backLink).toBeVisible();
     await expect(backLink).toContainText('Back to Home');
   });

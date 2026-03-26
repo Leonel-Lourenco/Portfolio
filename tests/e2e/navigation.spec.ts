@@ -91,8 +91,8 @@ test.describe('Navigation & Routing', () => {
 
   test('About page has "Back to Home" link', async ({ page }) => {
     await page.goto('/about');
-    const backLink = page.locator('a[href="/"]');
-    await expect(backLink.first()).toBeVisible();
+    const backLink = page.locator('section a[href="/"]').filter({ hasText: 'Back to Home' });
+    await expect(backLink).toBeVisible();
   });
 
   test('footer email link has correct href', async ({ page }) => {
