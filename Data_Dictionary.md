@@ -173,6 +173,8 @@ Card component for project previews.
 | `thumbnail` | `string` | Yes | - | Image path |
 | `href` | `string` | Yes | - | Link to project page |
 | `tags` | `string[]` | No | `[]` | Technology tags |
+| `underConstruction` | `boolean` | No | `false` | Shows 🚧 overlay on thumbnail for pages with pending content |
+| `phantomHighlight` | `boolean` | No | `false` | Shows purple gradient + 👻 overlay on thumbnail |
 
 **Structure:**
 ```

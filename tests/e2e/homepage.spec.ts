@@ -112,6 +112,31 @@ test.describe('Homepage', () => {
       const columns = style.split(' ').filter((s) => s.trim()).length;
       expect(columns).toBe(2);
     });
+
+    test('BrainWave, Spec2CAD, Otto cards show construction overlay', async ({ page }) => {
+      const constructionCards = ['brainwave', 'spec2cad', 'otto'];
+      for (const slug of constructionCards) {
+        const card = page.locator(`.project-card[href="/projects/${slug}"]`);
+        const overlay = card.locator('[aria-label="Under construction"]');
+        await expect(overlay).toBeVisible();
+        await expect(overlay).toContainText('\ud83d\udea7');
+      }
+    });
+
+    test('Phantom card shows purple gradient with ghost emoji', async ({ page }) => {
+      const phantomCard = page.locator('.project-card[href="/projects/phantom"]');
+      const overlay = phantomCard.locator('[aria-label="Phantom"]');
+      await expect(overlay).toBeVisible();
+      await expect(overlay).toContainText('\ud83d\udc7b');
+    });
+
+    test('Phantom card overlay has purple gradient background', async ({ page }) => {
+      const phantomCard = page.locator('.project-card[href="/projects/phantom"]');
+      const gradient = phantomCard.locator('.phantom-gradient');
+      await expect(gradient).toBeVisible();
+      const bg = await gradient.evaluate((el) => window.getComputedStyle(el).backgroundImage);
+      expect(bg).toContain('linear-gradient');
+    });
   });
 
   test.describe('CTA Section', () => {

@@ -1,6 +1,5 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import Spec2CADVideo from '../../components/demos/Spec2CADVideo';
 import projectsData from '../../data/projects.json';
 
 const project = projectsData.projects.find(p => p.slug === 'spec2cad');
@@ -28,18 +27,9 @@ const project = projectsData.projects.find(p => p.slug === 'spec2cad');
       </div>
       
       <div class="mb-12">
-        <div class="bg-border/30 rounded-lg p-4 mb-4">
-          <div class="flex items-center gap-2 text-sm text-muted mb-2">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"></circle>
-              <polygon points="10 8 16 12 10 16 10 8"></polygon>
-            </svg>
-            <span>Video Demo — Watch the Spec2CAD pipeline in action</span>
-          </div>
-        </div>
-        
-        <div class="border border-border rounded-lg overflow-hidden bg-secondary">
-          <Spec2CADVideo client:load />
+        <div class="border border-border rounded-lg overflow-hidden bg-border/10 flex flex-col items-center justify-center py-16 px-6 text-center">
+          <span class="text-5xl mb-4">🚧</span>
+          <p class="text-lg font-medium text-muted">Content is underway. Check back soon!</p>
         </div>
       </div>
       

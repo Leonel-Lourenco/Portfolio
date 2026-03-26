@@ -33,23 +33,19 @@ test.describe('Spec2CAD Project Page', () => {
     expect(count).toBeGreaterThanOrEqual(4);
   });
 
-  test('video demo container renders', async ({ page }) => {
-    const demoContainer = page.locator('.border.border-border.rounded-lg.overflow-hidden');
-    await expect(demoContainer.first()).toBeVisible();
+  test('construction banner container renders', async ({ page }) => {
+    const banner = page.locator('.border.border-border.rounded-lg.overflow-hidden');
+    await expect(banner.first()).toBeVisible();
   });
 
-  test('video demo info banner has correct text', async ({ page }) => {
-    const banner = page.locator('text=Watch the Spec2CAD pipeline');
-    await expect(banner).toBeVisible();
+  test('construction banner shows 🚧 emoji', async ({ page }) => {
+    const emoji = page.locator('text=🚧');
+    await expect(emoji).toBeVisible();
   });
 
-  test('Spec2CADVideo React island mounts', async ({ page }) => {
-    const demoContainer = page.locator('.border.border-border.rounded-lg.overflow-hidden.bg-secondary');
-    await expect(demoContainer).toBeVisible();
-
-    const box = await demoContainer.boundingBox();
-    expect(box).toBeTruthy();
-    expect(box!.height).toBeGreaterThan(50);
+  test('construction banner shows underway message', async ({ page }) => {
+    const message = page.locator('text=Content is underway. Check back soon!');
+    await expect(message).toBeVisible();
   });
 
   test('"About This Project" section renders', async ({ page }) => {

@@ -658,4 +658,20 @@ Tests run as a required `test` job in `.github/workflows/deploy.yml` before the 
 
 ---
 
+## Content Status
+
+| Project | Homepage Card | Individual Page |
+|---------|--------------|-----------------|
+| BrainWave | 🚧 Under-construction overlay | 🚧 Construction banner — "Content is underway. Check back soon!" |
+| Spec2CAD2 | 🚧 Under-construction overlay | 🚧 Construction banner — "Content is underway. Check back soon!" |
+| Otto_2 | 🚧 Under-construction overlay | 🚧 Construction banner — "Content is underway. Check back soon!" |
+| Phantom | 👻 Purple gradient + ghost emoji highlight | ✅ Full content with video demo |
+
+### ProjectCard Overlays
+
+- **`underConstruction`** — Semi-transparent dark overlay with centered 🚧 emoji. Applied to BrainWave, Spec2CAD2, and Otto_2 cards.
+- **`phantomHighlight`** — Purple gradient overlay (`135deg`, violet → purple → lavender at 75%/55%/40% opacity) with centered 👻 emoji. Applied to Phantom card to convey active content.
+
+---
+
 *End of Architecture Document*

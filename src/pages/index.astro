@@ -31,6 +31,8 @@ const { projects } = projectsData;
             thumbnail={project.thumbnail}
             href={`/projects/${project.slug}`}
             tags={project.tags}
+            underConstruction={['brainwave', 'spec2cad', 'otto'].includes(project.id)}
+            phantomHighlight={project.id === 'phantom'}
           />
         ))}
       </div>

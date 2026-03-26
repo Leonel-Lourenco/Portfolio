@@ -5,19 +5,31 @@ interface Props {
   thumbnail: string;
   href: string;
   tags?: string[];
+  underConstruction?: boolean;
+  phantomHighlight?: boolean;
 }
 
-const { title, description, thumbnail, href, tags = [] } = Astro.props;
+const { title, description, thumbnail, href, tags = [], underConstruction = false, phantomHighlight = false } = Astro.props;
 ---
 
 <a href={href} class="project-card card group block">
-  <div class="aspect-video overflow-hidden bg-border">
+  <div class="aspect-video overflow-hidden bg-border relative">
     <img 
       src={thumbnail} 
       alt={`${title} preview`}
       class="w-full h-full object-cover transition-transform duration-slow group-hover:scale-105"
       loading="lazy"
     />
+    {underConstruction && (
+      <div class="absolute inset-0 bg-black/60 flex items-center justify-center">
+        <span class="text-4xl" aria-label="Under construction">🚧</span>
+      </div>
+    )}
+    {phantomHighlight && (
+      <div class="phantom-gradient absolute inset-0 flex items-center justify-center">
+        <span class="text-5xl drop-shadow-lg" aria-label="Phantom">👻</span>
+      </div>
+    )}
   </div>
   
   <div class="p-6">
@@ -67,5 +79,9 @@ const { title, description, thumbnail, href, tags = [] } = Astro.props;
   .project-card:hover {
     transform: translateY(-8px) rotateX(2deg);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  }
+
+  .phantom-gradient {
+    background: linear-gradient(135deg, rgba(88, 28, 135, 0.75), rgba(147, 51, 234, 0.55), rgba(192, 132, 252, 0.4));
   }
 </style>
