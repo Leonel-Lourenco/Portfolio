@@ -3,23 +3,87 @@ import { useState, useRef, useEffect } from 'react';
 interface Chapter {
   title: string;
   startTime: number;
+  endTime: number;
   icon: string;
 }
 
 const chapters: Chapter[] = [
-  { title: 'Wake Word Detection', startTime: 0, icon: '🎤' },
-  { title: 'Voice Transcription', startTime: 30, icon: '📝' },
-  { title: 'Calendar Integration', startTime: 60, icon: '📅' },
-  { title: 'Phone Reminders', startTime: 105, icon: '📞' },
+  { title: 'Intro', startTime: 0, endTime: 82, icon: '�' },
+  { title: 'Voice Assistant', startTime: 83, endTime: 115, icon: '🎤' },
+  { title: 'Calendar Connectivity', startTime: 116, endTime: 183, icon: '📅' },
+  { title: 'Productivity', startTime: 184, endTime: 274, icon: '⚡' },
+  { title: 'Technical Explanation', startTime: 275, endTime: 310, icon: '⚙️' },
+  { title: 'Conclusion', startTime: 311, endTime: 334, icon: '✅' },
 ];
 
+const YOUTUBE_VIDEO_ID = 'TVPrfiYeSGo';
+
 export default function PhantomVideo() {
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const playerRef = useRef<YT.Player | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
-  const [duration, setDuration] = useState(165); // 2:45 default
+  const [duration, setDuration] = useState(334); // 5:34 from YouTube video
   const [activeChapter, setActiveChapter] = useState(0);
+  const [playerReady, setPlayerReady] = useState(false);
   const [showPlaceholder, setShowPlaceholder] = useState(true);
+
+  useEffect(() => {
+    // Load YouTube IFrame API
+    const tag = document.createElement('script');
+    tag.src = 'https://www.youtube.com/iframe_api';
+    const firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode?.insertBefore(tag, firstScriptTag);
+
+    // Initialize YouTube player when API is ready
+    (window as any).onYouTubeIframeAPIReady = () => {
+      if (containerRef.current) {
+        const player = new (window as any).YT.Player(containerRef.current, {
+          videoId: YOUTUBE_VIDEO_ID,
+          playerVars: {
+            autoplay: 0,
+            controls: 1,
+            disablekb: 0,
+            fs: 1,
+            modestbranding: 1,
+            rel: 0,
+            showinfo: 0,
+            iv_load_policy: 3,
+            cc_load_policy: 0,
+            playsinline: 1,
+            origin: window.location.origin,
+          },
+          events: {
+            onReady: (event: any) => {
+              playerRef.current = event.target;
+              setDuration(event.target.getDuration());
+              setPlayerReady(true);
+            },
+            onStateChange: (event: any) => {
+              setIsPlaying(event.data === 1); // YT.PlayerState.PLAYING
+            },
+          },
+        });
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    // Update current time every second when playing
+    let interval: NodeJS.Timeout;
+    
+    if (isPlaying && playerReady && playerRef.current) {
+      interval = setInterval(() => {
+        setCurrentTime(playerRef.current?.getCurrentTime() || 0);
+      }, 1000);
+    }
+    
+    return () => {
+      if (interval) {
+        clearInterval(interval);
+      }
+    };
+  }, [isPlaying, playerReady]);
 
   useEffect(() => {
     // Determine active chapter based on current time
@@ -34,39 +98,42 @@ export default function PhantomVideo() {
   const togglePlay = () => {
     if (showPlaceholder) {
       setShowPlaceholder(false);
-    }
-    
-    if (videoRef.current) {
-      if (isPlaying) {
-        videoRef.current.pause();
-      } else {
-        videoRef.current.play();
+      // Give YouTube player time to initialize before playing
+      setTimeout(() => {
+        if (playerRef.current && playerReady) {
+          playerRef.current.playVideo();
+        }
+      }, 500);
+    } else {
+      if (playerRef.current && playerReady) {
+        if (isPlaying) {
+          playerRef.current.pauseVideo();
+        } else {
+          playerRef.current.playVideo();
+        }
       }
-      setIsPlaying(!isPlaying);
-    }
-  };
-
-  const handleTimeUpdate = () => {
-    if (videoRef.current) {
-      setCurrentTime(videoRef.current.currentTime);
-    }
-  };
-
-  const handleLoadedMetadata = () => {
-    if (videoRef.current) {
-      setDuration(videoRef.current.duration);
     }
   };
 
   const jumpToChapter = (index: number) => {
-    if (videoRef.current) {
-      videoRef.current.currentTime = chapters[index].startTime;
-      setCurrentTime(chapters[index].startTime);
-      setActiveChapter(index);
-      if (!isPlaying) {
+    if (playerRef.current && playerReady) {
+      if (showPlaceholder) {
         setShowPlaceholder(false);
-        videoRef.current.play();
-        setIsPlaying(true);
+        setTimeout(() => {
+          if (playerRef.current) {
+            playerRef.current.seekTo(chapters[index].startTime, true);
+            setCurrentTime(chapters[index].startTime);
+            setActiveChapter(index);
+            playerRef.current.playVideo();
+          }
+        }, 500);
+      } else {
+        playerRef.current.seekTo(chapters[index].startTime, true);
+        setCurrentTime(chapters[index].startTime);
+        setActiveChapter(index);
+        if (!isPlaying) {
+          playerRef.current.playVideo();
+        }
       }
     }
   };
@@ -76,8 +143,8 @@ export default function PhantomVideo() {
     const percent = (e.clientX - rect.left) / rect.width;
     const newTime = percent * duration;
     
-    if (videoRef.current) {
-      videoRef.current.currentTime = newTime;
+    if (playerRef.current && playerReady) {
+      playerRef.current.seekTo(newTime, true);
       setCurrentTime(newTime);
     }
   };
@@ -94,7 +161,7 @@ export default function PhantomVideo() {
       <div className="relative aspect-video bg-gray-900">
         {/* Placeholder/Thumbnail */}
         {showPlaceholder && (
-          <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-800 to-gray-900 z-10">
+          <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-800 to-gray-900 z-20">
             <div className="text-center">
               <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-purple-500 to-blue-600 flex items-center justify-center">
                 <span className="text-4xl">👻</span>
@@ -114,24 +181,23 @@ export default function PhantomVideo() {
           </div>
         )}
 
-        {/* Video Element */}
-        <video
-          ref={videoRef}
-          className="w-full h-full object-cover"
-          onTimeUpdate={handleTimeUpdate}
-          onLoadedMetadata={handleLoadedMetadata}
-          onEnded={() => setIsPlaying(false)}
-          poster=""
-        >
-          <source src="/videos/phantom-demo.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+        {/* YouTube Player Container */}
+        <div
+          ref={containerRef}
+          className="w-full h-full"
+          style={{ 
+            position: 'relative',
+            zIndex: 1,
+            pointerEvents: showPlaceholder ? 'none' : 'auto'
+          }}
+        />
 
         {/* Play/Pause Overlay (when not placeholder) */}
         {!showPlaceholder && (
           <button
             onClick={togglePlay}
-            className="absolute inset-0 flex items-center justify-center group"
+            className="absolute inset-0 flex items-center justify-center group z-30"
+            style={{ pointerEvents: 'auto' }}
           >
             <div className={`w-16 h-16 rounded-full bg-white/20 backdrop-blur flex items-center justify-center transition-opacity ${isPlaying ? 'opacity-0 group-hover:opacity-100' : 'opacity-100'}`}>
               {isPlaying ? (
@@ -196,7 +262,7 @@ export default function PhantomVideo() {
       </div>
 
       {/* Chapter Navigation */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-gray-800">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-px bg-gray-800">
         {chapters.map((chapter, index) => (
           <button
             key={index}

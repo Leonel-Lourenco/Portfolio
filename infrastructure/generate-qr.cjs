@@ -8,6 +8,8 @@ const path = require('path');
 const url = process.argv[2] || 'https://example.cloudfront.net';
 const outputPath = path.join(__dirname, '..', 'public', 'images', 'portfolio-qr.png');
 
+console.log('🔗 URL to encode:', url);
+
 // Ensure output directory exists
 const outputDir = path.dirname(outputPath);
 if (!fs.existsSync(outputDir)) {

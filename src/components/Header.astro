@@ -8,7 +8,7 @@ const currentPath = Astro.url.pathname;
 ---
 
 <header class="fixed top-0 left-0 right-0 z-50 bg-secondary/80 backdrop-blur-md border-b border-border">
-  <nav class="container flex items-center justify-between h-16">
+  <nav class="flex items-center justify-between h-16 px-4 lg:px-6">
     <a href="/" class="text-xl font-bold tracking-tight hover:text-primary transition-colors">
       LL
     </a>
@@ -52,7 +52,7 @@ const currentPath = Astro.url.pathname;
   </nav>
 
   <div id="mobile-menu" class="hidden md:hidden border-t border-border bg-secondary">
-    <ul class="container py-4 space-y-4">
+    <ul class="px-4 lg:px-6 py-4 space-y-4">
       {navItems.map((item) => (
         <li>
           <a 

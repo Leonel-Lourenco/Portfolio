@@ -1,0 +1,77 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - navigation [ref=e3]:
+      - link "LL" [ref=e4] [cursor=pointer]:
+        - /url: /
+      - generic [ref=e5]:
+        - list [ref=e6]:
+          - listitem [ref=e7]:
+            - link "Projects" [ref=e8] [cursor=pointer]:
+              - /url: /#projects
+          - listitem [ref=e9]:
+            - link "About" [ref=e10] [cursor=pointer]:
+              - /url: /about
+        - link "Contact" [ref=e11] [cursor=pointer]:
+          - /url: mailto:leoneldlourenco@outlook.com
+  - main [ref=e13]:
+    - generic [ref=e15]:
+      - link "Back to Home" [ref=e16] [cursor=pointer]:
+        - /url: /
+        - img [ref=e17]
+        - text: Back to Home
+      - heading "About Me" [level=1] [ref=e19]
+      - generic [ref=e20]:
+        - paragraph [ref=e21]: I'm Leonel Lourenco, a full-stack engineer and Information Systems student at NJIT with a passion for building production-ready systems.
+        - paragraph [ref=e22]: I've deployed cloud infrastructure on AWS, developed AI-powered applications, and supported enterprise network operations for over 12,000 users. I love tackling complex problems — from COPPA-compliant EdTech platforms to offline voice assistants — and turning ideas into polished, scalable products.
+        - heading "What I Do" [level=2] [ref=e23]
+        - generic [ref=e24]:
+          - generic [ref=e25]:
+            - heading "Full-Stack Development" [level=3] [ref=e26]
+            - paragraph [ref=e27]: Building end-to-end applications with React, Flask, Node.js, and modern databases. Focus on clean architecture and maintainable code.
+          - generic [ref=e28]:
+            - heading "AI Integration" [level=3] [ref=e29]
+            - paragraph [ref=e30]: Implementing AI-powered features using OpenAI, Claude, and local LLMs. Experience with fine-tuning, RAG systems, and prompt engineering.
+          - generic [ref=e31]:
+            - heading "Cloud Infrastructure" [level=3] [ref=e32]
+            - paragraph [ref=e33]: Deploying and managing applications on AWS. Expertise in S3, CloudFront, EC2, and infrastructure as code.
+        - heading "Get in Touch" [level=2] [ref=e34]
+        - paragraph [ref=e35]: I'm currently looking for full-time opportunities and interesting projects. Feel free to reach out!
+        - generic [ref=e36]:
+          - link "Email Me" [ref=e37] [cursor=pointer]:
+            - /url: mailto:leoneldlourenco@outlook.com
+            - img [ref=e38]
+            - text: Email Me
+          - link "LinkedIn" [ref=e41] [cursor=pointer]:
+            - /url: https://www.linkedin.com/in/leonel-lourenco/
+            - img [ref=e42]
+            - text: LinkedIn
+        - generic [ref=e46]:
+          - generic [ref=e49]: Available for Interviews
+          - paragraph [ref=e50]: I'm actively seeking opportunities and can start immediately. Reach out to schedule a conversation.
+  - contentinfo [ref=e51]:
+    - generic [ref=e53]:
+      - paragraph [ref=e54]: © 2026 Leonel Lourenco. All rights reserved.
+      - generic [ref=e55]:
+        - link "Email" [ref=e56] [cursor=pointer]:
+          - /url: mailto:leoneldlourenco@outlook.com
+          - img [ref=e57]
+        - link "LinkedIn" [ref=e60] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/leonel-lourenco/
+          - img [ref=e61]
+  - generic [ref=e67]:
+    - button "Menu" [ref=e68]:
+      - img [ref=e70]
+      - generic: Menu
+    - button "Inspect" [ref=e74]:
+      - img [ref=e76]
+      - generic: Inspect
+    - button "Audit" [ref=e78]:
+      - img [ref=e80]
+      - generic: Audit
+    - button "Settings" [ref=e83]:
+      - img [ref=e85]
+      - generic: Settings
+```

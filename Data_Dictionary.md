@@ -689,4 +689,60 @@ GitHub Actions CI/CD pipeline.
 
 ---
 
+## Testing Infrastructure
+
+### Test Configuration (`playwright.config.ts`)
+
+| Property | Value | Description |
+|----------|-------|-------------|
+| `testDir` | `./tests/e2e` | Test file directory |
+| `baseURL` | `http://localhost:4321` | Preview server URL |
+| `browserName` | `chromium` | Browser engine for all projects |
+| `maxDiffPixelRatio` | `0.01` | Visual regression tolerance (1%) |
+| `retries` | `2` (CI) / `0` (local) | Retry count by environment |
+| `workers` | `1` (CI) / `auto` (local) | Parallelism by environment |
+
+### Test Files
+
+| File | Tests | Description |
+|------|-------|-------------|
+| `build-health.spec.ts` | 5 | Build output and dist file verification |
+| `navigation.spec.ts` | ~30 | Header, footer, links, mobile menu, external link safety |
+| `homepage.spec.ts` | ~15 | Hero, project cards grid, CTA section |
+| `about.spec.ts` | ~10 | Bio, skills, contact buttons, availability badge |
+| `project-brainwave.spec.ts` | ~12 | BrainWave page content and video demo |
+| `project-spec2cad.spec.ts` | ~12 | Spec2CAD page content and video demo |
+| `project-otto.spec.ts` | ~15 | Otto page content, video demo, contact section |
+| `project-phantom.spec.ts` | ~12 | Phantom page content and video demo |
+| `seo-meta.spec.ts` | ~48 | Meta tags, OG, Twitter Card, canonical per page |
+| `accessibility.spec.ts` | ~30 | Alt text, headings, keyboard nav, aria-labels |
+| `visual-regression.spec.ts` | 24 | Full-page screenshot baselines (6 pages × 4 viewports) |
+| `performance.spec.ts` | ~15 | Load times, console errors, broken links, images |
+
+### Visual Regression Baselines
+
+Stored in `tests/e2e/visual-regression.spec.ts-snapshots/`. Naming convention: `{route}-{viewport}-{project}-{platform}.png`.
+
+| Route | mobile | tablet | desktop | wide |
+|-------|--------|--------|---------|------|
+| homepage | ✓ | ✓ | ✓ | ✓ |
+| about | ✓ | ✓ | ✓ | ✓ |
+| project-brainwave | ✓ | ✓ | ✓ | ✓ |
+| project-spec2cad | ✓ | ✓ | ✓ | ✓ |
+| project-otto | ✓ | ✓ | ✓ | ✓ |
+| project-phantom | ✓ | ✓ | ✓ | ✓ |
+
+### Console Error Ignore Patterns
+
+Tests filter out known non-actionable console errors from Vite preview server:
+
+| Pattern | Reason |
+|---------|--------|
+| `Failed to load resource` | Video/asset 404s on preview server |
+| `astro-island.*Error hydrating` | Transient hydration errors in preview |
+| `Failed to fetch dynamically imported module` | Vite dep optimization race |
+| `Outdated Optimize Dep` | Stale Vite dependency cache |
+
+---
+
 *End of Data Dictionary*

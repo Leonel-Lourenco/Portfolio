@@ -1,0 +1,144 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - navigation [ref=e3]:
+      - link "LL" [ref=e4] [cursor=pointer]:
+        - /url: /
+      - link "Contact" [ref=e6] [cursor=pointer]:
+        - /url: mailto:leoneldlourenco@outlook.com
+      - button "Toggle menu" [ref=e7] [cursor=pointer]:
+        - img [ref=e8]
+  - main [ref=e10]:
+    - generic [ref=e12]:
+      - link "Back to Projects" [ref=e13] [cursor=pointer]:
+        - /url: /#projects
+        - img [ref=e14]
+        - text: Back to Projects
+      - generic [ref=e16]:
+        - generic [ref=e17]:
+          - generic [ref=e18]: Python
+          - generic [ref=e19]: Whisper
+          - generic [ref=e20]: Vosk
+          - generic [ref=e21]: Piper TTS
+          - generic [ref=e22]: Canvas LMS
+          - generic [ref=e23]: Twilio
+        - heading "Phantom" [level=1] [ref=e24]
+        - paragraph [ref=e25]: Privacy-first voice assistant with speaker verification, Canvas LMS integration, intelligent scheduling, and a gamified productivity system.
+      - generic [ref=e26]:
+        - generic [ref=e28]:
+          - img [ref=e29]
+          - generic [ref=e32]: Video Demo — Watch Phantom in action with chapter navigation
+        - generic [ref=e35]:
+          - generic [ref=e38]:
+            - generic [ref=e40]: 👻
+            - heading "Phantom Voice Assistant" [level=3] [ref=e41]
+            - paragraph [ref=e42]: Fully local AI-powered calendar management
+            - button "Watch Demo" [ref=e43] [cursor=pointer]:
+              - img [ref=e44]
+              - text: Watch Demo
+          - generic [ref=e53]:
+            - generic [ref=e54]:
+              - button [ref=e55] [cursor=pointer]:
+                - img [ref=e56]
+              - generic [ref=e58]: 0:00 / 5:34
+            - generic [ref=e59]: � Intro
+          - generic [ref=e60]:
+            - button "� 0:00 Intro" [ref=e61] [cursor=pointer]:
+              - generic [ref=e62]:
+                - generic [ref=e63]: �
+                - generic [ref=e64]: 0:00
+              - generic [ref=e65]: Intro
+            - button "🎤 1:23 Voice Assistant" [ref=e66] [cursor=pointer]:
+              - generic [ref=e67]:
+                - generic [ref=e68]: 🎤
+                - generic [ref=e69]: 1:23
+              - generic [ref=e70]: Voice Assistant
+            - button "📅 1:56 Calendar Connectivity" [ref=e71] [cursor=pointer]:
+              - generic [ref=e72]:
+                - generic [ref=e73]: 📅
+                - generic [ref=e74]: 1:56
+              - generic [ref=e75]: Calendar Connectivity
+            - button "⚡ 3:04 Productivity" [ref=e76] [cursor=pointer]:
+              - generic [ref=e77]:
+                - generic [ref=e78]: ⚡
+                - generic [ref=e79]: 3:04
+              - generic [ref=e80]: Productivity
+            - button "⚙️ 4:35 Technical Explanation" [ref=e81] [cursor=pointer]:
+              - generic [ref=e82]:
+                - generic [ref=e83]: ⚙️
+                - generic [ref=e84]: 4:35
+              - generic [ref=e85]: Technical Explanation
+            - button "✅ 5:11 Conclusion" [ref=e86] [cursor=pointer]:
+              - generic [ref=e87]:
+                - generic [ref=e88]: ✅
+                - generic [ref=e89]: 5:11
+              - generic [ref=e90]: Conclusion
+      - generic [ref=e91]:
+        - heading "About This Project" [level=2] [ref=e92]
+        - paragraph [ref=e93]: Phantom is a fully local voice assistant running on consumer hardware (8GB VRAM). It combines wake word detection, speaker verification with ECAPA-TDNN embeddings, Whisper STT, and Piper TTS—all processing audio locally with zero cloud AI dependency. Beyond calendar management, Phantom integrates with Canvas LMS for academic tracking, features an intelligent task scheduler with duration estimation, and includes a gamified token system that lets you earn screen time by completing tasks.
+        - heading "Key Features" [level=3] [ref=e94]
+        - list [ref=e95]:
+          - listitem [ref=e96]:
+            - img [ref=e97]
+            - text: Speaker verification with ECAPA-TDNN embeddings and passcode fallback
+          - listitem [ref=e99]:
+            - img [ref=e100]
+            - text: Phonetic correction for misheard voice commands
+          - listitem [ref=e102]:
+            - img [ref=e103]
+            - text: "Canvas LMS integration: announcements, assignments, grades, exam reminders"
+          - listitem [ref=e105]:
+            - img [ref=e106]
+            - text: Intelligent task scheduling with duration estimation and 'plan my day'
+          - listitem [ref=e108]:
+            - img [ref=e109]
+            - text: "Gamified token system: earn tokens for tasks, spend on screen time"
+          - listitem [ref=e111]:
+            - img [ref=e112]
+            - text: Browser/Steam blocker with URL detection and overlay enforcement
+          - listitem [ref=e114]:
+            - img [ref=e115]
+            - text: AI-powered task categorization with user-correction learning
+          - listitem [ref=e117]:
+            - img [ref=e118]
+            - text: Twilio phone reminders with pre-generated Piper TTS audio
+          - listitem [ref=e120]:
+            - img [ref=e121]
+            - text: Google Calendar CRUD with natural language date/time parsing
+          - listitem [ref=e123]:
+            - img [ref=e124]
+            - text: Security alerts via phone call/SMS for unauthorized access attempts
+        - heading "Technology Stack" [level=3] [ref=e126]
+        - generic [ref=e127]:
+          - generic [ref=e128]: Python
+          - generic [ref=e129]: Whisper
+          - generic [ref=e130]: Vosk
+          - generic [ref=e131]: Piper TTS
+          - generic [ref=e132]: Canvas LMS
+          - generic [ref=e133]: Twilio
+  - contentinfo [ref=e134]:
+    - generic [ref=e136]:
+      - paragraph [ref=e137]: © 2026 Leonel Lourenco. All rights reserved.
+      - generic [ref=e138]:
+        - link "Email" [ref=e139] [cursor=pointer]:
+          - /url: mailto:leoneldlourenco@outlook.com
+          - img [ref=e140]
+        - link "LinkedIn" [ref=e143] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/leonel-lourenco/
+          - img [ref=e144]
+  - generic [ref=e150]:
+    - button "Menu" [ref=e151]:
+      - img [ref=e153]
+      - generic: Menu
+    - button "Inspect" [ref=e157]:
+      - img [ref=e159]
+      - generic: Inspect
+    - button "Audit" [ref=e161]:
+      - img [ref=e163]
+      - generic: Audit
+    - button "Settings" [ref=e166]:
+      - img [ref=e168]
+      - generic: Settings
+```

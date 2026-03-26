@@ -1,0 +1,136 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - navigation [ref=e3]:
+      - link "LL" [ref=e4] [cursor=pointer]:
+        - /url: /
+      - link "Contact" [ref=e6] [cursor=pointer]:
+        - /url: mailto:leoneldlourenco@outlook.com
+      - button "Toggle menu" [ref=e7] [cursor=pointer]:
+        - img [ref=e8]
+  - main [ref=e10]:
+    - generic [ref=e11]:
+      - generic [ref=e13]:
+        - heading "Leonel Lourenco" [level=1] [ref=e14]:
+          - generic [ref=e15]: Leonel Lourenco
+          - generic [ref=e16]:
+            - generic [ref=e17]:
+              - generic [ref=e18]: L
+              - generic [ref=e19]: e
+              - generic [ref=e20]: o
+              - generic [ref=e21]: "n"
+              - generic [ref=e22]: e
+              - generic [ref=e23]: l
+            - generic [ref=e24]:
+              - generic [ref=e25]: L
+              - generic [ref=e26]: o
+              - generic [ref=e27]: u
+              - generic [ref=e28]: r
+              - generic [ref=e29]: e
+              - generic [ref=e30]: "n"
+              - generic [ref=e31]: c
+              - generic [ref=e32]: o
+        - paragraph [ref=e33]: Full-Stack Engineer • Building production-ready systems at NJIT
+        - generic [ref=e34]:
+          - link "View Projects" [ref=e35] [cursor=pointer]:
+            - /url: /#projects
+            - text: View Projects
+            - img [ref=e36]
+          - link "About Me" [ref=e38] [cursor=pointer]:
+            - /url: /about
+      - img [ref=e40]
+    - generic [ref=e43]:
+      - generic [ref=e44]:
+        - heading "Featured Projects" [level=2] [ref=e45]
+        - paragraph [ref=e46]: A selection of my most impactful work — from AI-powered platforms to autonomous systems. Each project includes an interactive demo.
+      - generic [ref=e47]:
+        - link "BrainWave preview BrainWave AI-powered tutoring platform for elementary students with real-time chat, progress tracking, and COPPA compliance. React Flask SQLite OpenAI Explore" [ref=e48] [cursor=pointer]:
+          - /url: /projects/brainwave
+          - img "BrainWave preview" [ref=e50]
+          - generic [ref=e51]:
+            - heading "BrainWave" [level=3] [ref=e52]
+            - paragraph [ref=e53]: AI-powered tutoring platform for elementary students with real-time chat, progress tracking, and COPPA compliance.
+            - generic [ref=e54]:
+              - generic [ref=e55]: React
+              - generic [ref=e56]: Flask
+              - generic [ref=e57]: SQLite
+              - generic [ref=e58]: OpenAI
+            - generic [ref=e59]:
+              - text: Explore
+              - img [ref=e60]
+        - link "Spec2CAD2 preview Spec2CAD2 AI-driven CAD automation system that converts JSON specifications into FreeCAD 3D models with vision capabilities. Python FreeCAD MCP Pydantic Explore" [ref=e62] [cursor=pointer]:
+          - /url: /projects/spec2cad
+          - img "Spec2CAD2 preview" [ref=e64]
+          - generic [ref=e65]:
+            - heading "Spec2CAD2" [level=3] [ref=e66]
+            - paragraph [ref=e67]: AI-driven CAD automation system that converts JSON specifications into FreeCAD 3D models with vision capabilities.
+            - generic [ref=e68]:
+              - generic [ref=e69]: Python
+              - generic [ref=e70]: FreeCAD
+              - generic [ref=e71]: MCP
+              - generic [ref=e72]: Pydantic
+            - generic [ref=e73]:
+              - text: Explore
+              - img [ref=e74]
+        - link "Otto_2 preview Otto_2 Autonomous Shopify site builder that transforms business data into fully functional, AI-tested storefronts. Python Claude AI Gemini Shopify Explore" [ref=e76] [cursor=pointer]:
+          - /url: /projects/otto
+          - img "Otto_2 preview" [ref=e78]
+          - generic [ref=e79]:
+            - heading "Otto_2" [level=3] [ref=e80]
+            - paragraph [ref=e81]: Autonomous Shopify site builder that transforms business data into fully functional, AI-tested storefronts.
+            - generic [ref=e82]:
+              - generic [ref=e83]: Python
+              - generic [ref=e84]: Claude AI
+              - generic [ref=e85]: Gemini
+              - generic [ref=e86]: Shopify
+            - generic [ref=e87]:
+              - text: Explore
+              - img [ref=e88]
+        - link "Phantom preview Phantom Privacy-first voice assistant with speaker verification, Canvas LMS integration, intelligent scheduling, and a gamified productivity system. Python Whisper Vosk Piper TTS Explore" [ref=e90] [cursor=pointer]:
+          - /url: /projects/phantom
+          - img "Phantom preview" [ref=e92]
+          - generic [ref=e93]:
+            - heading "Phantom" [level=3] [ref=e94]
+            - paragraph [ref=e95]: Privacy-first voice assistant with speaker verification, Canvas LMS integration, intelligent scheduling, and a gamified productivity system.
+            - generic [ref=e96]:
+              - generic [ref=e97]: Python
+              - generic [ref=e98]: Whisper
+              - generic [ref=e99]: Vosk
+              - generic [ref=e100]: Piper TTS
+            - generic [ref=e101]:
+              - text: Explore
+              - img [ref=e102]
+    - generic [ref=e105]:
+      - heading "Available for Opportunities" [level=2] [ref=e106]
+      - paragraph [ref=e107]: I'm currently looking for full-time roles and interesting projects. Let's build something great together.
+      - generic [ref=e108]:
+        - link "Get in Touch" [ref=e109] [cursor=pointer]:
+          - /url: mailto:leoneldlourenco@outlook.com
+        - link "Learn More" [ref=e110] [cursor=pointer]:
+          - /url: /about
+  - contentinfo [ref=e111]:
+    - generic [ref=e113]:
+      - paragraph [ref=e114]: © 2026 Leonel Lourenco. All rights reserved.
+      - generic [ref=e115]:
+        - link "Email" [ref=e116] [cursor=pointer]:
+          - /url: mailto:leoneldlourenco@outlook.com
+          - img [ref=e117]
+        - link "LinkedIn" [ref=e120] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/leonel-lourenco/
+          - img [ref=e121]
+  - generic [ref=e127]:
+    - button "Menu" [ref=e128]:
+      - img [ref=e130]
+      - generic: Menu
+    - button "Inspect" [ref=e134]:
+      - img [ref=e136]
+      - generic: Inspect
+    - button "Audit" [ref=e138]:
+      - img [ref=e140]
+      - generic: Audit
+    - button "Settings" [ref=e143]:
+      - img [ref=e145]
+      - generic: Settings
+```

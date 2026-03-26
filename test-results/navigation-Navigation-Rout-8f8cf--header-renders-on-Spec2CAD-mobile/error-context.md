@@ -1,0 +1,117 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - navigation [ref=e3]:
+      - link "LL" [ref=e4] [cursor=pointer]:
+        - /url: /
+      - link "Contact" [ref=e6] [cursor=pointer]:
+        - /url: mailto:leoneldlourenco@outlook.com
+      - button "Toggle menu" [ref=e7] [cursor=pointer]:
+        - img [ref=e8]
+  - main [ref=e10]:
+    - generic [ref=e12]:
+      - link "Back to Projects" [ref=e13] [cursor=pointer]:
+        - /url: /#projects
+        - img [ref=e14]
+        - text: Back to Projects
+      - generic [ref=e16]:
+        - generic [ref=e17]:
+          - generic [ref=e18]: Python
+          - generic [ref=e19]: FreeCAD
+          - generic [ref=e20]: MCP
+          - generic [ref=e21]: Pydantic
+        - heading "Spec2CAD2" [level=1] [ref=e22]
+        - paragraph [ref=e23]: AI-driven CAD automation system that converts JSON specifications into FreeCAD 3D models with vision capabilities.
+      - generic [ref=e24]:
+        - generic [ref=e26]:
+          - img [ref=e27]
+          - generic [ref=e30]: Video Demo — Watch the Spec2CAD pipeline in action
+        - generic [ref=e33]:
+          - generic [ref=e34]:
+            - generic [ref=e36]:
+              - generic [ref=e38]: 📐
+              - heading "Spec2CAD Pipeline" [level=3] [ref=e39]
+              - paragraph [ref=e40]: JSON specification to 3D CAD model generation
+              - button "Watch Demo" [ref=e41] [cursor=pointer]:
+                - img [ref=e42]
+                - text: Watch Demo
+            - generic [ref=e44]: Your browser does not support the video tag.
+          - generic [ref=e50]:
+            - generic [ref=e51]:
+              - button [ref=e52] [cursor=pointer]:
+                - img [ref=e53]
+              - generic [ref=e55]: 0:00 / 2:00
+            - generic [ref=e56]: 📝 JSON Specification Input
+          - generic [ref=e57]:
+            - button "📝 0:00 JSON Specification Input" [ref=e58] [cursor=pointer]:
+              - generic [ref=e59]:
+                - generic [ref=e60]: 📝
+                - generic [ref=e61]: 0:00
+              - generic [ref=e62]: JSON Specification Input
+            - button "⚙️ 0:30 Feature Parsing" [ref=e63] [cursor=pointer]:
+              - generic [ref=e64]:
+                - generic [ref=e65]: ⚙️
+                - generic [ref=e66]: 0:30
+              - generic [ref=e67]: Feature Parsing
+            - button "🔧 1:00 CAD Model Generation" [ref=e68] [cursor=pointer]:
+              - generic [ref=e69]:
+                - generic [ref=e70]: 🔧
+                - generic [ref=e71]: 1:00
+              - generic [ref=e72]: CAD Model Generation
+            - button "📐 1:30 Export & Visualization" [ref=e73] [cursor=pointer]:
+              - generic [ref=e74]:
+                - generic [ref=e75]: 📐
+                - generic [ref=e76]: 1:30
+              - generic [ref=e77]: Export & Visualization
+      - generic [ref=e78]:
+        - heading "About This Project" [level=2] [ref=e79]
+        - paragraph [ref=e80]: Spec2CAD2 is a hybrid AI-deterministic system that transforms JSON specifications and technical drawings into fully realized FreeCAD 3D models. It employs semantic validation, face-aware coordinate systems, and supports features like holes, pockets, slots, chamfers, and fillets.
+        - heading "Key Features" [level=3] [ref=e81]
+        - list [ref=e82]:
+          - listitem [ref=e83]:
+            - img [ref=e84]
+            - text: JSON-to-CAD model generation
+          - listitem [ref=e86]:
+            - img [ref=e87]
+            - text: Technical drawing processing with AI vision
+          - listitem [ref=e89]:
+            - img [ref=e90]
+            - text: Deterministic + AI-driven hybrid pipeline
+          - listitem [ref=e92]:
+            - img [ref=e93]
+            - text: Face-local coordinate system for precision
+          - listitem [ref=e95]:
+            - img [ref=e96]
+            - text: Export to FCStd, STEP, STL formats
+        - heading "Technology Stack" [level=3] [ref=e98]
+        - generic [ref=e99]:
+          - generic [ref=e100]: Python
+          - generic [ref=e101]: FreeCAD
+          - generic [ref=e102]: MCP
+          - generic [ref=e103]: Pydantic
+  - contentinfo [ref=e104]:
+    - generic [ref=e106]:
+      - paragraph [ref=e107]: © 2026 Leonel Lourenco. All rights reserved.
+      - generic [ref=e108]:
+        - link "Email" [ref=e109] [cursor=pointer]:
+          - /url: mailto:leoneldlourenco@outlook.com
+          - img [ref=e110]
+        - link "LinkedIn" [ref=e113] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/leonel-lourenco/
+          - img [ref=e114]
+  - generic [ref=e120]:
+    - button "Menu" [ref=e121]:
+      - img [ref=e123]
+      - generic: Menu
+    - button "Inspect" [ref=e127]:
+      - img [ref=e129]
+      - generic: Inspect
+    - button "Audit" [ref=e131]:
+      - img [ref=e133]
+      - generic: Audit
+    - button "Settings" [ref=e136]:
+      - img [ref=e138]
+      - generic: Settings
+```

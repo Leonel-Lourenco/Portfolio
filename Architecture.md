@@ -606,4 +606,56 @@ Deployment is **automatic** on every push to `main`. Can also be triggered manua
 
 ---
 
+## Testing Infrastructure
+
+### Framework
+
+| Component | Technology |
+|-----------|-----------|
+| Test Runner | Playwright |
+| Test Directory | `tests/e2e/` |
+| Config | `playwright.config.ts` |
+| Baselines | `tests/e2e/visual-regression.spec.ts-snapshots/` |
+
+### Viewport Projects
+
+| Name | Width × Height | Notes |
+|------|---------------|-------|
+| mobile | 375 × 812 | iPhone-class, touch enabled |
+| tablet | 768 × 1024 | iPad-class |
+| desktop | 1280 × 800 | Standard laptop |
+| wide | 1920 × 1080 | Full HD monitor |
+
+### Test Suites
+
+| Suite | File | Coverage |
+|-------|------|----------|
+| Build Health | `build-health.spec.ts` | Build success, dist file presence |
+| Navigation | `navigation.spec.ts` | Header, footer, nav links, mobile menu, external link safety |
+| Homepage | `homepage.spec.ts` | Hero animation, project cards, CTA section, responsive grid |
+| About | `about.spec.ts` | Bio, skills, contact buttons, availability badge |
+| BrainWave | `project-brainwave.spec.ts` | Page content, video demo mount, features, tags |
+| Spec2CAD | `project-spec2cad.spec.ts` | Page content, video demo mount, features, tags |
+| Otto | `project-otto.spec.ts` | Page content, video demo mount, contact section |
+| Phantom | `project-phantom.spec.ts` | Page content, video demo mount, features, tags |
+| SEO & Meta | `seo-meta.spec.ts` | Title, description, OG tags, Twitter Card, canonical, favicon |
+| Accessibility | `accessibility.spec.ts` | Alt text, headings, keyboard focus, aria-labels |
+| Visual Regression | `visual-regression.spec.ts` | 24 baseline screenshots (6 pages × 4 viewports) |
+| Performance | `performance.spec.ts` | Load times, console errors, broken links, image loading |
+
+### NPM Scripts
+
+| Script | Command |
+|--------|---------|
+| `test:e2e` | `playwright test` |
+| `test:e2e:ui` | `playwright test --ui` |
+| `test:e2e:update` | `playwright test --update-snapshots` |
+| `test:e2e:report` | `playwright show-report` |
+
+### CI Integration
+
+Tests run as a required `test` job in `.github/workflows/deploy.yml` before the `build` and `deploy` jobs. Deployment is gated on all tests passing. On failure, Playwright HTML report and test screenshots are uploaded as artifacts with 14-day retention.
+
+---
+
 *End of Architecture Document*
