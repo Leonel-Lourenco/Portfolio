@@ -82,7 +82,7 @@ test.describe('Navigation & Routing', () => {
     for (const proj of projectPages) {
       test(`${proj.name} has "Back to Projects" link`, async ({ page }) => {
         await page.goto(proj.path);
-        const backLink = page.locator('a[href="/#projects"]');
+        const backLink = page.locator('section a[href="/#projects"]');
         await expect(backLink).toBeVisible();
         await expect(backLink).toContainText('Back to Projects');
       });

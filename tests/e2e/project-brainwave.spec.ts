@@ -10,7 +10,7 @@ test.describe('BrainWave Project Page', () => {
   });
 
   test('"Back to Projects" link is present and correct', async ({ page }) => {
-    const backLink = page.locator('a[href="/#projects"]');
+    const backLink = page.locator('section a[href="/#projects"]');
     await expect(backLink).toBeVisible();
     await expect(backLink).toContainText('Back to Projects');
   });

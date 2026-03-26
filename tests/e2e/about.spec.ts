@@ -35,12 +35,12 @@ test.describe('About Page', () => {
   });
 
   test('Email button has correct href', async ({ page }) => {
-    const emailBtn = page.locator('a[href="mailto:leoneldlourenco@outlook.com"]');
-    await expect(emailBtn.first()).toBeVisible();
+    const emailBtn = page.locator('main a[href="mailto:leoneldlourenco@outlook.com"]');
+    await expect(emailBtn).toBeVisible();
   });
 
   test('LinkedIn button has correct href', async ({ page }) => {
-    const linkedinBtn = page.locator('a[href="https://www.linkedin.com/in/leonel-lourenco/"]');
+    const linkedinBtn = page.locator('main a[href="https://www.linkedin.com/in/leonel-lourenco/"]');
     await expect(linkedinBtn).toBeVisible();
   });
 
