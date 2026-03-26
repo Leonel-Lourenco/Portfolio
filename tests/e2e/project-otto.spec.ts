@@ -75,20 +75,20 @@ test.describe('Otto Project Page', () => {
     });
 
     test('Email button has correct href', async ({ page }) => {
-      const contactSection = page.locator('.border-t.border-border');
+      const contactSection = page.locator('.mt-16.pt-12.border-t.border-border');
       const emailBtn = contactSection.locator('a[href="mailto:leoneldlourenco@outlook.com"]');
       await expect(emailBtn).toBeVisible();
     });
 
     test('LinkedIn button has correct href', async ({ page }) => {
-      const contactSection = page.locator('.border-t.border-border');
+      const contactSection = page.locator('.mt-16.pt-12.border-t.border-border');
       const linkedinBtn = contactSection.locator('a[href*="linkedin.com"]');
       await expect(linkedinBtn).toBeVisible();
       await expect(linkedinBtn).toHaveAttribute('target', '_blank');
     });
 
     test('GitHub button has correct href', async ({ page }) => {
-      const contactSection = page.locator('.border-t.border-border');
+      const contactSection = page.locator('.mt-16.pt-12.border-t.border-border');
       const githubBtn = contactSection.locator('a[href*="github.com"]');
       await expect(githubBtn).toBeVisible();
       await expect(githubBtn).toHaveAttribute('target', '_blank');

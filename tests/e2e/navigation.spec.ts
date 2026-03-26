@@ -42,8 +42,8 @@ test.describe('Navigation & Routing', () => {
   test('desktop nav shows Projects and About links', async ({ page, browserName }, testInfo) => {
     test.skip(testInfo.project.name === 'mobile', 'Desktop-only test');
     await page.goto('/');
-    const projectsLink = page.locator('header ul a[href="/#projects"]');
-    const aboutLink = page.locator('header ul a[href="/about"]');
+    const projectsLink = page.locator('header nav ul a[href="/#projects"]');
+    const aboutLink = page.locator('header nav ul a[href="/about"]');
     await expect(projectsLink).toBeVisible();
     await expect(aboutLink).toBeVisible();
   });
@@ -71,9 +71,11 @@ test.describe('Navigation & Routing', () => {
     await expect(contactBtn).toHaveAttribute('href', 'mailto:leoneldlourenco@outlook.com');
   });
 
-  test('About link navigates to about page', async ({ page }) => {
+  test('About link navigates to about page', async ({ page }, testInfo) => {
+    test.skip(testInfo.project.name === 'mobile', 'Desktop-only — mobile uses hamburger menu');
     await page.goto('/');
-    await page.locator('header a[href="/about"]').first().click();
+    const aboutLink = page.locator('header nav ul a[href="/about"]');
+    await aboutLink.click();
     await expect(page).toHaveURL('/about');
   });
 
