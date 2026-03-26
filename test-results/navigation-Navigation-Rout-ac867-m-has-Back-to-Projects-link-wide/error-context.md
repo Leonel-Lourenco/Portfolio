@@ -46,40 +46,23 @@
                 - img [ref=e47]
                 - text: Watch Demo
             - iframe [ref=e49]:
-              - generic [active] [ref=f1e1]:
-                - generic "YouTube Video Player" [ref=f1e3]
+              - generic "YouTube Video Player" [ref=f1e3]:
                 - generic [ref=f1e5]:
-                  - generic:
-                    - generic:
-                      - button "Play video" [ref=f1e10] [cursor=pointer]:
-                        - generic [ref=f1e13]:
-                          - img
-                      - button "Hide player controls" [ref=f1e14] [cursor=pointer]
-                      - generic [ref=f1e16]:
-                        - generic [ref=f1e21]:
-                          - generic [ref=f1e22]:
-                            - link "unknown" [ref=f1e23] [cursor=pointer]:
-                              - /url: https://www.youtube.com/watch?v=TVPrfiYeSGo
-                            - link "Leonel Lourenco" [ref=f1e24] [cursor=pointer]:
-                              - /url: /channel/UCs5oaCC6fdk3Gk7yRKKlIdA
-                              - generic [ref=f1e25]: Leonel Lourenco
-                          - generic [ref=f1e26]:
-                            - button "thumbnail-image" [ref=f1e27] [cursor=pointer]:
-                              - img "thumbnail-image" [ref=f1e28]
-                            - generic [ref=f1e30]:
-                              - generic: Leonel Lourenco
-                              - generic: 9 subscribers
-                        - generic [ref=f1e31]:
-                          - button "Share" [ref=f1e34] [cursor=pointer]:
-                            - generic [ref=f1e38]:
-                              - img
-                          - link "Watch on YouTube" [ref=f1e45] [cursor=pointer]:
-                            - /url: https://www.youtube.com/watch?v=TVPrfiYeSGo
-                            - generic [ref=f1e48]:
-                              - text: Watch on
-                              - img [ref=f1e50]:
-                                - generic [ref=f1e52]:
-                                  - img
+                  - link "Photo image of Leonel Lourenco" [ref=f1e8] [cursor=pointer]:
+                    - /url: https://www.youtube.com/channel/UCs5oaCC6fdk3Gk7yRKKlIdA?embeds_referring_euri=http%3A%2F%2Flocalhost%3A4321%2F&embeds_referring_origin=http%3A%2F%2Flocalhost%3A4321
+                  - link "unknown" [ref=f1e11] [cursor=pointer]:
+                    - /url: https://www.youtube.com/watch?v=TVPrfiYeSGo
+                  - button "Share" [ref=f1e13] [cursor=pointer]:
+                    - generic [ref=f1e14]:
+                      - img
+                    - generic [ref=f1e15]: Share
+                - button "Play" [ref=f1e18] [cursor=pointer]:
+                  - img
+                - link "Watch on YouTube" [ref=f1e19] [cursor=pointer]:
+                  - /url: https://www.youtube.com/watch?v=TVPrfiYeSGo&embeds_referring_euri=http%3A%2F%2Flocalhost%3A4321%2F&embeds_referring_origin=http%3A%2F%2Flocalhost%3A4321
+                  - generic [ref=f1e20]: Watch on
+                  - generic [ref=f1e21]:
+                    - img
           - generic [ref=e57]:
             - generic [ref=e58]:
               - button [ref=e59] [cursor=pointer]:
@@ -170,17 +153,4 @@
         - link "LinkedIn" [ref=e147] [cursor=pointer]:
           - /url: https://www.linkedin.com/in/leonel-lourenco/
           - img [ref=e148]
-  - generic [ref=e154]:
-    - button "Menu" [ref=e155]:
-      - img [ref=e157]
-      - generic: Menu
-    - button "Inspect" [ref=e161]:
-      - img [ref=e163]
-      - generic: Inspect
-    - button "Audit" [ref=e165]:
-      - img [ref=e167]
-      - generic: Audit
-    - button "Settings" [ref=e170]:
-      - img [ref=e172]
-      - generic: Settings
 ```

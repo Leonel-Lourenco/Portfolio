@@ -101,17 +101,4 @@
         - link "LinkedIn" [ref=e113] [cursor=pointer]:
           - /url: https://www.linkedin.com/in/leonel-lourenco/
           - img [ref=e114]
-  - generic [ref=e120]:
-    - button "Menu" [ref=e121]:
-      - img [ref=e123]
-      - generic: Menu
-    - button "Inspect" [ref=e127]:
-      - img [ref=e129]
-      - generic: Inspect
-    - button "Audit" [ref=e131]:
-      - img [ref=e133]
-      - generic: Audit
-    - button "Settings" [ref=e136]:
-      - img [ref=e138]
-      - generic: Settings
 ```
