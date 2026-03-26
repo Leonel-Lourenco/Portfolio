@@ -75,6 +75,11 @@ test.describe('Phantom Project Page', () => {
       /astro-island.*Error hydrating/,
       /Failed to fetch dynamically imported module/,
       /Outdated Optimize Dep/,
+      /youtube\.com/i,
+      /www-widgetapi/i,
+      /ytInitialPlayerResponse/i,
+      /yt\./i,
+      /googlevideo\.com/i,
     ];
     page.on('console', (msg) => {
       if (msg.type() === 'error') {

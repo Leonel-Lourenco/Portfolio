@@ -11,6 +11,11 @@ const DIST = join(ROOT, 'dist');
 
 test.describe('Build Health', () => {
   test('astro build completes without errors', () => {
+    // In CI the workflow already builds before running tests — skip redundant rebuild
+    if (process.env.CI) {
+      expect(existsSync(DIST), 'dist/ should exist from CI build step').toBe(true);
+      return;
+    }
     const result = execSync('npm run build', {
       cwd: ROOT,
       encoding: 'utf-8',

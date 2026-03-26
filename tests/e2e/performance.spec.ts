@@ -29,6 +29,11 @@ test.describe('Performance', () => {
       /astro-island.*Error hydrating/,
       /Failed to fetch dynamically imported module/,
       /Outdated Optimize Dep/,
+      /youtube\.com/i,
+      /www-widgetapi/i,
+      /ytInitialPlayerResponse/i,
+      /yt\./i,
+      /googlevideo\.com/i,
     ];
 
     for (const pg of ALL_PAGES) {

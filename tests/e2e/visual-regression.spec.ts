@@ -10,6 +10,9 @@ const ROUTES = [
 ];
 
 test.describe('Visual Regression', () => {
+  // Skip in CI: baselines are OS-specific (win32) and CI runs Ubuntu
+  test.skip(!!process.env.CI, 'Visual regression skipped in CI — baselines are Windows-only');
+
   for (const route of ROUTES) {
     test(`${route.name} matches baseline screenshot`, async ({ page }, testInfo) => {
       await page.goto(route.path);

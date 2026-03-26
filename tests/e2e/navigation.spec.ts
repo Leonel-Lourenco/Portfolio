@@ -112,12 +112,19 @@ test.describe('Navigation & Routing', () => {
     for (const pg of ALL_PAGES) {
       test(`${pg.name}: external links are safe`, async ({ page }) => {
         await page.goto(pg.path);
-        const externalLinks = page.locator('a[href^="http"]:not(astro-island a)');
-        const count = await externalLinks.count();
-        for (let i = 0; i < count; i++) {
-          const link = externalLinks.nth(i);
-          await expect(link).toHaveAttribute('target', '_blank');
-          await expect(link).toHaveAttribute('rel', /noopener/);
+        const externalLinks = await page.evaluate(() => {
+          const links = Array.from(document.querySelectorAll('a[href^="http"]'));
+          return links
+            .filter((a) => !a.closest('astro-island'))
+            .map((a) => ({
+              href: a.getAttribute('href'),
+              target: a.getAttribute('target'),
+              rel: a.getAttribute('rel'),
+            }));
+        });
+        for (const link of externalLinks) {
+          expect(link.target, `${link.href} missing target="_blank"`).toBe('_blank');
+          expect(link.rel, `${link.href} missing rel="noopener"`).toMatch(/noopener/);
         }
       });
     }

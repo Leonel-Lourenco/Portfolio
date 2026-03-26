@@ -27,6 +27,10 @@ infrastructure/*.json
 !infrastructure/iam-policy.json
 infrastructure/cf-distributions.json
 
+# Playwright test artifacts
+test-results/
+playwright-report/
+
 # Logs
 *.log
 npm-debug.log*
